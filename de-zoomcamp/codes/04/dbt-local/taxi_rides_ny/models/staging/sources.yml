@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Raw data from the taxi rides in New York City."
+    database: taxi_rides_ny # BigQuery project ID
+    schema: prod  # BigQuery dataset name
+    tables:
+      - name: green_tripdata
+        description: "Green taxi trip data for New York City."
+        columns:
+          - name: vendorid
+            description: |
+              A code indicating the provider associated with the trip record.
+                1: 'Creative Mobile Technologies, LLC'
+                2: 'VeriFone Inc.'
+                4: 'Unknown/Other'
+            data_type: integer
+            meta:
+              pii: false
+              ownership: data_team
+              importance: high
+      - name: yellow_tripdata
+        description: "Yellow taxi trip data for New York City."
