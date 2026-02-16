@@ -99,5 +99,7 @@ Flags in dbt commands:
   - `dbt run -t prod`: target becomes `prod`
 - `dbt run --select` or `dbt run -s`: specify one model
   - e.g., `dbt run --select stg_green_tripdata`
-  - e.g., `dbt run --select +int_trips_unioned`: added a `+` sign to run everything that depends on this.
+  - e.g., `dbt run --select int_trips_unioned`: run only this model.
+  - e.g., `dbt run --select +int_trips_unioned`: added a `+` sign before to run everything that depends on this in the upstream.
+  - e.g., `dbt run --select int_trips_unioned+`: added a `+` sign after to run everything in downstream dependencies.
   - e.g., `dbt run --select models/intermediate`
