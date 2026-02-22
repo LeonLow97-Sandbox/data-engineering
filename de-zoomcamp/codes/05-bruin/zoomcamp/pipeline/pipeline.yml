@@ -1,0 +1,20 @@
+name: nyc-taxi
+schedule: daily
+
+# Format: YYYY-MM-DD
+start_date: "2022-01-01"
+
+# Common pattern: `duckdb: duckdb-default` for local dev.
+# Docs (connections): https://getbruin.com/docs/bruin/commands/connections
+default_connections:
+  duckdb: duckdb-default
+
+# - Variables must have a `default` so assets can render without `--var`.
+# - In SQL/YAML assets: reference as `{{ var.my_variable }}`.
+# - In Python assets: read JSON from env var `BRUIN_VARS`.
+variables:
+  taxi_types:
+    type: array
+    items:
+      type: string
+    default: ["yellow"]

@@ -134,3 +134,8 @@ google-*.json
 .env.local
 .env.*.local
 *.env
+
+logs/runs
+logs/*.log
+.bruin.yml
+logs/queries
